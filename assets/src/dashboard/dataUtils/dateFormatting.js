@@ -14,15 +14,9 @@
  * limitations under the License.
  */
 
-export { default as AMPStoryWrapper } from './ampStoryWrapper';
-export { dummyDateFormattingObject } from '../dataUtils/dateFormatting';
-export { default as formattedStoriesArray } from '../dataUtils/formattedStoriesArray';
-export { default as formattedTemplatesArray } from '../dataUtils/formattedTemplatesArray';
-export { default as formattedUsersObject } from '../dataUtils/formattedUsersObject';
-export { default as PlayButton } from './playButton';
-
-export const STORYBOOK_PAGE_SIZE = {
-  width: 212,
-  height: 318,
-  containerHeight: 376.89,
+export const dummyDateFormattingObject = {
+  dateFormat: 'F j, Y',
+  timeFormat: 'g:i A',
+  gmtOffset: -4,
+  timezone: 'America/Santo_Domingo',
 };
