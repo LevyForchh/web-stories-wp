@@ -25,7 +25,7 @@ import { within } from '@testing-library/react';
 import Fixture from '../../../../karma/fixture';
 import formattedStoriesArray from '../../../../dataUtils/formattedStoriesArray';
 import formattedUsersObject from '../../../../dataUtils/formattedUsersObject';
-import { getFormattedDisplayDate } from '../../../../utils';
+import { getTimeSensitiveDisplayDate } from '../../../../utils';
 import {
   TEMPLATES_GALLERY_VIEWING_LABELS,
   TEMPLATES_GALLERY_STATUS,
@@ -714,7 +714,7 @@ describe('CUJ: Creator can view their stories in list view', () => {
           (a, b) =>
             new Date(a.created).getTime() - new Date(b.created).getTime()
         )
-        .map(({ created }) => getFormattedDisplayDate(created))
+        .map(({ created }) => getTimeSensitiveDisplayDate(created))
         .reverse(); // Default sort order in List View is Desc
 
       let rowDateCreatedValues = rows.map((row) => row.children[3].innerText);
@@ -753,7 +753,7 @@ describe('CUJ: Creator can view their stories in list view', () => {
 
       const storieModifiedSortedByModified = [...formattedStoriesArray]
         .sort((a, b) => b.modified.diff(a.modified)) //initial sort is desc by modified
-        .map(({ modified }) => getFormattedDisplayDate(modified));
+        .map(({ modified }) => getTimeSensitiveDisplayDate(modified));
 
       // Last Modified is the fifth column
       let rowModifiedValues = rows.map((row) => row.children[4].innerText);
